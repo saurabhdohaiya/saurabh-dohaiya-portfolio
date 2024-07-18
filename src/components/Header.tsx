@@ -9,7 +9,7 @@ function Header() {
         <header className="py-8 xl:py-12 text-white">
             <div className="container mx-auto flex items-center justify-between w-full">
                 <Link href={"/"}>
-                    <h1 className="text-4xl font-semibold">
+                    <h1 className="text-5xl font-semibold">
                         SD
                         <span className={"text-accent"}>.</span>
                     </h1>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {FaGithub, FaLinkedinIn} from "react-icons/fa";
 import Link from "next/link";
+import {Introduction} from "@/config/home.config";
 
 type Props = {
     containerStyles?: string,
@@ -8,8 +9,8 @@ type Props = {
 }
 
 const socials = [
-    {icon: <FaGithub/>, path:""},
-    {icon: <FaLinkedinIn/>, path:""},
+    {icon: <FaGithub/>, path:Introduction.github},
+    {icon: <FaLinkedinIn/>, path:Introduction.linkedin},
 ]
 
 

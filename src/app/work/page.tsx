@@ -41,18 +41,19 @@ function Work() {
                                 {project.num}
                             </div>
                             {/*Category*/}
-                            <h2 className={"text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize"}>
-                                {project.category} project
+                            <h2 className={"text-[42px] font-bold leading-none text-white hover:text-accent transition-all duration-500 capitalize"}>
+                                {project.title}
                             </h2>
+                            <p className={"text-white group-hover:text-accent capitalize text-white/80"}>{project.category} project</p>
                             {/*Description*/}
                             <p className={" text-white/60"}>{project.description}</p>
                             {/*Tech stack*/}
                             <ul className={"flex gap-4"}>
                                 {project.technologies.map((item, index) => {
-                                    return(
-                                        <li key={index} className={"text-xl text-accent"}>
+                                    return (
+                                        <li key={index} className={"text-xs text-accent p-2 bg-primary/80"}>
                                             {item.name}
-                                        {/*    remove the last commap*/}
+                                            {/*    remove the last commap*/}
                                             {index !== project.technologies.length - 1 && ", "}
                                         </li>
                                     );
@@ -66,8 +67,10 @@ function Work() {
                                 <Link href={project.live}>
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
-                                            <TooltipTrigger className={"w-[4.375rem] h-[4.375rem] rounded-full bg-white/5 flex justify-center items-center group"}>
-                                                <BsArrowUpRight className={"text-white text-3xl group-hover:text-accent"} />
+                                            <TooltipTrigger
+                                                className={"w-[4.375rem] h-[4.375rem] rounded-full bg-white/5 flex justify-center items-center group"}>
+                                                <BsArrowUpRight
+                                                    className={"text-white text-3xl group-hover:text-accent"}/>
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Live project</p>
@@ -79,8 +82,9 @@ function Work() {
                                 <Link href={project.github}>
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
-                                            <TooltipTrigger className={"w-[4.375rem] h-[4.375rem] rounded-full bg-white/5 flex justify-center items-center group"}>
-                                                <BsGithub className={"text-white text-3xl group-hover:text-accent"} />
+                                            <TooltipTrigger
+                                                className={"w-[4.375rem] h-[4.375rem] rounded-full bg-white/5 flex justify-center items-center group"}>
+                                                <BsGithub className={"text-white text-3xl group-hover:text-accent"}/>
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>GitHub</p>
@@ -92,7 +96,7 @@ function Work() {
                         </div>
                     </div>
                     <div className={"w-full md:w-[50%]"}>
-                        <Swiper
+                    <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
                             className={"md:h-[32.5rem] mb-12"}
@@ -108,7 +112,7 @@ function Work() {
                                                 {/*/Image*/}
                                                 <div className={"relative w-full h-full"}>
                                                     <Image 
-                                                        src={project.image} 
+                                                        src={project.image}
                                                         fill 
                                                         className={"object-cover"} 
                                                         alt={project.title}/>

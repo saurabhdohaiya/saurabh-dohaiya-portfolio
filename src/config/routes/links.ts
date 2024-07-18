@@ -8,7 +8,7 @@ export const Links = [
         path: "/resume"
     },
     {
-        name: "work",
+        name: "projects",
         path: "/work"
     },
     // {

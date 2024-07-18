@@ -17,7 +17,7 @@ import {
 
 export const AboutMe = {
     title: "About me",
-    description: "Lorem ipsum dolor sit amet consectetur",
+    description: "I am highly skilled Front-end Software Engineer with a B.Tech in Computer Science from IIIT Kota. Proficient in modern web technologies and full-stack development, with hands-on experience in UI enhancements, user efficiency improvements, and real-time data integration. Seeking to contribute to innovative, user-centric software solutions.",
     info: [
         {
             fieldName: "Name",
@@ -45,13 +45,21 @@ export const AboutMe = {
 export const Experience = {
     icon: "../asset/resume/badge.svg",
     title: "Work Experience",
-    description: "Lorem ipsum dolor sit amet consectetur",
+    description: "",
     items: [
         {
             position: "Software Developer Engineer Intern",
-            company: "Digiotech Solutiosn",
+            company: "Digio Solutions",
             duration: "Jan 2024 - Jun 2024",
             location: "Bangalore(On-site)",
+            summary: "",
+            description: [
+                "Designed and implemented UI enhancements for enterprise and regular form dashboards, resulting in a 30% reduction in user interface load times and a 20% increase in user satisfaction ratings.",
+                "Introduced copy-paste functionality in DigiForm using Angular, increasing user efficiency by 25% and reducing error rates by 15%.",
+                "Analyzed requirements and devised a plan to redirect users to alternative e-sign providers, successfully implementing the\n" +
+                "ESP redirection functionality to enhance the user experience and simplify the e-signing process resulting in a 10% increase\n" +
+                "in e-signing of documents."
+            ],
         },
     ]
 }
@@ -78,7 +86,12 @@ export const Education = {
 
 export const Skills = {
     title: "Skills",
-    description: "Lorem ipsum dolorf sit amet consectetur",
+    description: [
+        "I have acquired a diverse set of skills through my education and hands-on experience. My proficiency in programming languages includes C, C++, JavaScript, TypeScript, and Python. On the web development front, I am skilled in HTML, CSS, JavaScript, TailwindCSS, Material UI, AngularJS, ReactJS, ExpressJS, NodeJS, JWT Authentication, ShadCN UI, and Socket.io.",
+        "My database management expertise covers SQL and MongoDB. I am also adept at using tools like Git, BitBucket, WebStorm, Google Colab, and Postman API.",
+        "Soft skills I possess include organizing, planning, and book reading. My coursework includes Data Structures and Algorithms, Database Management Systems, Object-Oriented Programming Systems, Operating Systems, and Computer Networks.",
+        "Through my internship and project experiences, I have developed a strong foundation in UI design, full-stack development, and real-time data integration.",
+    ],
     skillList: [
         {
             icon: <FaHtml5/>,

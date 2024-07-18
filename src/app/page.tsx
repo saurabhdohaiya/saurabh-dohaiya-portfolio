@@ -3,6 +3,7 @@ import {FiDownload} from "react-icons/fi";
 import Social from "@/components/Social";
 import ProfilePhoto from "@/components/ProfilePhoto";
 import Stats from "@/components/Stats";
+import {Introduction} from "@/config/home.config";
 
 
 const Home = () => {
@@ -11,16 +12,16 @@ const Home = () => {
             <div className={"container mx-auto h-full"}>
                 <div className="flex flex-col md:flex-row items-center justify-between md:pt-8 md:pb-[3.5rem]">
                     <div className="text-center md:text-left  order-2 md:order-none">
-                        <span className={"text-base"}>Software Developer</span>
+                        <span className={"text-base"}>{Introduction.profile}</span>
                         <h1 className={"h2 mb-6"}>
                             Hello I'm
                             <br/>
                             <span className={"text-accent"}>
-                                Saurabh Dohaiya
+                                {Introduction.name}
                             </span>
                         </h1>
-                        <p className={"max-w-[500px] mb-9 text-white/80"}>
-                            Description about me
+                        <p className={"max-w-[500px] mb-9 text-white/80 text-base"}>
+                            {Introduction.introduction}
                         </p>
                     {/*    Btns and socials*/}
                         <div className={"flex flex-col md:flex-row items-center gap-8"}>
