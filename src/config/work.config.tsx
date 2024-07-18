@@ -102,7 +102,7 @@ export const Projects = [
                 icon: ""
             }
         ],
-        image: "/project-thumb-1.png",
+        image: "/project-thumb-3.png",
         live: "https://64ff4254ecfe832302586e8f--cool-sundae-788b3e.netlify.app/",
         github: "https://github.com/saurabhdohaiya/weather-react-app"
     }

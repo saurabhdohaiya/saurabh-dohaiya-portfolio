@@ -177,7 +177,7 @@ function Resume() {
                                 <div className={"flex flex-col w-full gap-3"}>
                                     {Skills.description.map((point, index) => {
                                         return(
-                                            <li className={"text-white/60 text-sm mx-auto md:mx-0"}>{point}</li>
+                                            <li className={"text-white/60 text-sm mx-auto md:mx-0"} key={index}>{point}</li>
                                         );
                                     })}
                                 </div>
