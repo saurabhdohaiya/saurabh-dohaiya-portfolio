@@ -23,22 +23,22 @@ export const Projects = [
                 name: "Node.js",
                 icon: ""
             },
-            {
-                name: "React Hooks",
-                icon: ""
-            },
-            {
-                name: "JWT",
-                icon: ""
-            },
-            {
-                name: "Shadcn UI",
-                icon: ""
-            },
-            {
-                name: "Stripe Integration",
-                icon: ""
-            }
+            // {
+            //     name: "React Hooks",
+            //     icon: ""
+            // },
+            // {
+            //     name: "JWT",
+            //     icon: ""
+            // },
+            // {
+            //     name: "Shadcn UI",
+            //     icon: ""
+            // },
+            // {
+            //     name: "Stripe Integration",
+            //     icon: ""
+            // }
         ],
         image: "/project-thumb-1.png",
         live: "https://mern-food-ordering-app-frontend-3s52.onrender.com/",
@@ -66,14 +66,14 @@ export const Projects = [
                 name: "Firebase",
                 icon: ""
             },
-            {
-                name: "React Hooks",
-                icon: ""
-            },
-            {
-                name: "ChartJS",
-                icon: ""
-            }
+            // {
+            //     name: "React Hooks",
+            //     icon: ""
+            // },
+            // {
+            //     name: "ChartJS",
+            //     icon: ""
+            // }
         ],
         image: "/project-thumb-2.png",
         live: "https://crypto-clock.netlify.app/",
