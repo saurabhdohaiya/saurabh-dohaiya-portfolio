@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body{
+    @apply font-primary bg-primary text-white leading-loose;
+  }
+  .h1{
+    @apply text-[3rem] md:text-[5rem] leading-[1.1] font-semibold;
+  }
+  .h2{
+    @apply text-[2rem] md:text-[4rem] leading-[1.1] font-semibold;
+  }
+  .h3{
+    @apply text-[1rem] md:text-[3rem] leading-[1.1] font-semibold;
+  }
+  .text-outline{
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+}
