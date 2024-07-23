@@ -1,3 +1,5 @@
+"use client"
+
 import {Button} from "@/components/ui/button";
 import {FiDownload} from "react-icons/fi";
 import Social from "@/components/Social";
@@ -7,6 +9,16 @@ import {Introduction} from "@/config/home.config";
 
 
 const Home = () => {
+    const handleDownload = () => {
+        const url = "https://drive.google.com/uc?export=download&id=1xPoHhJ3Pu0VbDRCRVBCbvDE1kP_UEwmK";
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Saurabh_Dohaiya_Resume'; // Optional: you can set a default filename here
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    };
+
     return (
         <section className="h-full">
             <div className={"container mx-auto h-full"}>
@@ -29,6 +41,7 @@ const Home = () => {
                                 variant={"outline"}
                                 size={"lg"}
                                 className={"rounded-full text-accent border-2 border-accent hover:bg-accent hover:text-white gap-2"}
+                                onClick={handleDownload}
                             >
                                 <span>Download CV</span>
                                 <FiDownload className={"text-xl"}/>
