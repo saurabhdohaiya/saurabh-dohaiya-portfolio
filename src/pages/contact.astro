@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactMethods from "../components/react/ContactMethods";
+import SocialLinks from "../components/react/SocialLinks";
+import { profile } from "../content/portfolio";
+
+const description = "Contact Saurabh Dohaiya about engineering, product development, and platform work.";
+---
+
+<BaseLayout title="Contact — Saurabh Dohaiya" description={description}>
+  <section class="page-shell interior-page contact-page">
+    <p class="eyebrow">Contact</p>
+    <h1>Let’s talk about<br /><em>what’s next.</em></h1>
+    <p class="case-lede">For conversations about engineering, products, platform work, or an interesting challenge.</p>
+    <ContactMethods email={profile.email} phone={profile.phone} className="contact-details contact-page-details" />
+    <SocialLinks links={profile.socials} className="social-links contact-socials" />
+  </section>
+</BaseLayout>

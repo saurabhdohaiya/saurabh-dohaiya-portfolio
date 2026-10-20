@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Saurabh Dohaiya — Portfolio
 
-## Getting Started
+An Astro static portfolio inspired by the Prism template on 21st.dev. The site is designed for recruiters and engineering teams, with case studies for platform work and a full-stack project.
 
-First, run the development server:
+## Local development
+
+Requires Node.js 22.22 or later and pnpm 12.14.0.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create the production build with `pnpm build`, preview it with `pnpm preview`, and run Astro's diagnostics with `pnpm check`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Portfolio copy, experience, project details, skill groups, and profile links live in `src/content/portfolio.ts`. Astro pages render static HTML. Small framework-neutral React components are kept under `src/components/react/` so they can also be reused by a future Next.js app; the production site itself runs on Astro.
 
-## Learn More
+The source resume is published at `public/resume.pdf`. The `/resume/` page provides a web summary and a download link.
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` — portfolio landing page
+- `/work/` — selected project index
+- `/work/featurelab/`, `/work/horus/`, `/work/zesty/` — project case studies
+- `/resume/` and `/resume.pdf` — resume page and download
+- `/contact/` — contact information
+- `/services` — permanent redirect to the contact section
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The canonical site URL is configured in `astro.config.mjs` as `https://saurabh-dohaiya-portfolio-ujio.vercel.app`. Keep the existing Vercel project and alias when switching its detected framework to Astro. Use a preview deployment to confirm the build and routes before promoting any production deployment.

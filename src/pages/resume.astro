@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { education, experience, profile, skillGroups } from "../content/portfolio";
+
+const description = "Resume and professional experience of Saurabh Dohaiya, software engineer at Aspora.";
+---
+
+<BaseLayout title="Resume — Saurabh Dohaiya" description={description}>
+  <section class="page-shell interior-page resume-page">
+    <div class="resume-topline"><div><p class="eyebrow">Resume · Software Engineer</p><h1>Saurabh Dohaiya</h1><p class="resume-contact">{profile.email} <span>·</span> {profile.phone}</p></div><a class="button button-primary" href={profile.resume} download>Download PDF ↓</a></div>
+    <section class="resume-section"><h2>Experience</h2>{experience.map((entry) => <article class="resume-entry"><div class="resume-entry-heading"><div><h3>{entry.role}</h3><p>{entry.company}</p></div><span>{entry.period}</span></div><ul class="highlight-list">{entry.highlights.map((item) => <li>{item}</li>)}</ul></article>)}</section>
+    <section class="resume-section"><h2>Technical skills</h2><div class="resume-skills">{skillGroups.map((group) => <p><strong>{group.title}:</strong> {group.skills.join(", ")}</p>)}</div></section>
+    <section class="resume-section"><h2>Education</h2><article class="resume-entry resume-entry-heading"><div><h3>{education.institution}</h3><p>{education.degree}</p></div><span>{education.period} · {education.result}</span></article></section>
+  </section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import { projects } from "../../content/portfolio";
+
+const description = "Selected engineering work by Saurabh Dohaiya: platform engineering, server-driven UI, and full-stack product development.";
+---
+
+<BaseLayout title="Selected Work — Saurabh Dohaiya" description={description}>
+  <section class="page-shell interior-page">
+    <SectionHeading eyebrow="Selected work" title="Systems, interfaces, and products." description="A closer look at platform engineering, server-driven UI, and full-stack product work." />
+    <div class="project-grid">{projects.map((project) => <ProjectCard project={project} />)}</div>
+  </section>
+</BaseLayout>

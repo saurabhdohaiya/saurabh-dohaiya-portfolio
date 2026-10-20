@@ -1,0 +1,154 @@
+---
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Saurabh Dohaiya — Software Engineer",
+  description = "Software engineer building full-stack platforms, developer tools, and thoughtful product experiences.",
+  image = "/images/profile.jpeg",
+  canonical = new URL(Astro.url.pathname, Astro.site),
+} = Astro.props;
+const socialImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0b0b" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Saurabh Dohaiya" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:image:alt" content="Portrait of Saurabh Dohaiya" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content="Portrait of Saurabh Dohaiya" />
+    <title>{title}</title>
+    <script is:inline>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteNav />
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <a class="wordmark" href="/" aria-label="Saurabh Dohaiya home">SD<span>.</span></a>
+      <p>Designed and built with care.</p>
+      <a href="#main" class="back-top">Back to top ↑</a>
+    </footer>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        const updateToggleLabel = () => {
+          const label = `Switch to ${root.dataset.theme === "light" ? "dark" : "light"} theme`;
+          document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+            toggle.setAttribute("aria-label", label);
+            toggle.setAttribute("title", label);
+          });
+        };
+        const updateThemeColor = () => {
+          themeColor?.setAttribute("content", root.dataset.theme === "light" ? "#f5f4ef" : "#0a0b0b");
+        };
+
+        updateToggleLabel();
+        updateThemeColor();
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+          const toggle = target.closest("[data-theme-toggle]");
+          if (!toggle) return;
+
+          const theme = root.dataset.theme === "light" ? "dark" : "light";
+          root.dataset.theme = theme;
+          try {
+            localStorage.setItem("portfolio-theme", theme);
+          } catch {
+            // The theme still applies for this visit when storage is unavailable.
+          }
+          updateToggleLabel();
+          updateThemeColor();
+        });
+      })();
+    </script>
+    <script is:inline>
+      (() => {
+        const card = document.querySelector("[data-tilt-card]");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const coarsePointer = window.matchMedia("(pointer: coarse)");
+        if (!card || reduceMotion.matches || coarsePointer.matches) return;
+
+        let frame = 0;
+        card.addEventListener("pointermove", (event) => {
+          const bounds = card.getBoundingClientRect();
+          const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+          const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+          cancelAnimationFrame(frame);
+          frame = requestAnimationFrame(() => {
+            card.style.setProperty("--tilt-x", `${-y * 8}deg`);
+            card.style.setProperty("--tilt-y", `${x * 8}deg`);
+          });
+        });
+        card.addEventListener("pointerleave", () => {
+          card.style.setProperty("--tilt-x", "0deg");
+          card.style.setProperty("--tilt-y", "0deg");
+        });
+      })();
+    </script>
+    <script>
+      import Lenis from "lenis";
+      import "lenis/dist/lenis.css";
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const timeline = document.querySelector<HTMLElement>(".experience-timeline");
+      const updateTimelineProgress = () => {
+        if (!timeline) return;
+        const timelineTop = timeline.getBoundingClientRect().top + window.scrollY;
+        const progress = Math.min(1, Math.max(0,
+          (window.scrollY + window.innerHeight / 2 - timelineTop) / timeline.offsetHeight,
+        ));
+        timeline.style.setProperty("--career-progress", String(progress));
+        timeline.style.setProperty("--career-progress-percent", `${progress * 100}%`);
+      };
+
+      updateTimelineProgress();
+      window.addEventListener("resize", updateTimelineProgress);
+      if (!prefersReducedMotion.matches) {
+        const lenis = new Lenis({ autoRaf: true, anchors: true });
+        lenis.on("scroll", updateTimelineProgress);
+      } else {
+        window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+      }
+    </script>
+  </body>
+</html>

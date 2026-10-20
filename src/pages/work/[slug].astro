@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { projects } from "../../content/portfolio";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const description = `${project.title}: ${project.summary}`;
+---
+
+<BaseLayout title={`${project.title} — Saurabh Dohaiya`} description={description}>
+  <article class:list={["page-shell", "case-study", `case-${project.visual}`]}>
+    <a class="back-link" href="/work/">← All work</a>
+    <header class="case-header">
+      <p class="eyebrow">{project.number} / {project.kind}</p>
+      <h1>{project.title}<span class="accent-dot">.</span></h1>
+      <p class="case-lede">{project.summary}</p>
+    </header>
+    <div class="case-visual project-visual" aria-hidden="true">
+      {project.visual === "featurelab" && <div class="featurelab-visual"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="visual-core"><span></span><span></span><span></span></div><span class="visual-caption">distributed configuration</span></div>}
+      {project.visual === "horus" && <div class="horus-visual"><div class="ui-window"><i></i><i></i><i></i><span class="ui-line"></span><span class="ui-block"></span><span class="ui-line short"></span></div><div class="ui-window offset"><i></i><i></i><i></i><span class="ui-line"></span><span class="ui-block"></span><span class="ui-line short"></span></div><span class="visual-caption">one system · many interfaces</span></div>}
+      {project.visual === "zesty" && <img src="/project-thumb-1.png" alt="" width="1280" height="720" />}
+      {project.visual === "currency" && <div class="product-visual currency-visual"><span class="visual-caption">USD / INR · rate watch</span><div class="exchange-card"><small>Exchange rate monitor</small><strong>Live rates <span>●</span></strong><div class="exchange-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small class="chart-label">RATE HISTORY</small></div><div class="alert-chip">↗ Rate alert active</div></div>}
+      {project.visual === "rules" && <div class="product-visual rules-visual"><span class="visual-caption">rule composition · AST</span><div class="rule-node rule-root">AND</div><div class="rule-branch"><div class="rule-node">country = IN</div><div class="rule-node">age &gt; 18</div></div></div>}
+      {project.visual === "chat" && <div class="product-visual chat-visual"><span class="visual-caption">messages · in real time</span><div class="chat-window"><div class="chat-top"><i></i><span>ChatByte</span><b>•••</b></div><div class="chat-bubble">Are we still on for today?</div><div class="chat-bubble chat-bubble-out">Yes, see you soon <span>✓✓</span></div><div class="chat-input">Write a message <b>↑</b></div></div></div>}
+      <span class="project-number">{project.number}</span>
+    </div>
+    <div class="case-facts">
+      <div><span class="eyebrow">Contribution</span><p>{project.contribution}</p></div>
+      <div><span class="eyebrow">Outcome</span><p>{project.impact}</p></div>
+    </div>
+    <section class="case-stack"><h2>Tools & ideas</h2><ul class="tag-list">{project.tags.map((tag) => <li>{tag}</li>)}</ul></section>
+    {(project.href || project.github) && <nav class="case-links" aria-label="Project links">
+      {project.href && <a class="button button-primary" href={project.href} target="_blank" rel="noreferrer">Visit project ↗</a>}
+      {project.github && <a class="button button-quiet" href={project.github} target="_blank" rel="noreferrer">View source ↗</a>}
+    </nav>}
+    <a class="text-link next-work" href="/work/">Back to selected work <span aria-hidden="true">↗</span></a>
+  </article>
+</BaseLayout>
