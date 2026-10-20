@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saurabh-dohaiya-portfolio-ujio.vercel.app/sitemap-index.xml
+Sitemap: https://saurabh-dohaiya-portfolio-ujio.vercel.app/sitemap.xml

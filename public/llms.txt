@@ -1,0 +1,27 @@
+# Saurabh Dohaiya
+
+> Backend-focused software engineer building reliable platforms, APIs, developer tools, and product experiences.
+
+Saurabh is a Software Engineer at Aspora (YC W22, previously Vance). His work includes backend services, platform engineering, distributed configuration, server-driven UI, and full-stack products.
+
+## Portfolio
+
+- [Home](https://saurabh-dohaiya-portfolio-ujio.vercel.app/): Profile, experience, skills, and selected work.
+- [Selected work](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/): Project overview and case studies.
+- [Resume](https://saurabh-dohaiya-portfolio-ujio.vercel.app/resume/): Resume and experience summary.
+- [Contact](https://saurabh-dohaiya-portfolio-ujio.vercel.app/contact/): Contact details and social profiles.
+
+## Project case studies
+
+- [FeatureLab](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/featurelab/): Feature management and distributed configuration platform.
+- [Horus](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/horus/): Server-driven UI platform and reusable React components.
+- [Zesty](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/zesty/): Restaurant ordering product with authentication and payments.
+- [Currency Exchange Alert](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/currency-exchange-alert/): Currency conversion dashboard with rate alerts.
+- [AST Rule Engine](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/ast-rule-engine/): Rule creation, composition, and evaluation APIs.
+- [ChatByte](https://saurabh-dohaiya-portfolio-ujio.vercel.app/work/chatbyte/): Real-time one-to-one and group messaging app.
+
+## Profiles
+
+- [GitHub](https://github.com/saurabhdohaiya)
+- [LinkedIn](https://www.linkedin.com/in/saurabhdohaiya/)
+- [LeetCode](https://leetcode.com/u/saurabhdohaiya/)
