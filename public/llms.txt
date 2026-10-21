@@ -1,8 +1,8 @@
 # Saurabh Dohaiya
 
-> Backend-focused software engineer building reliable platforms, APIs, developer tools, and product experiences.
+> Backend-focused software engineer, formerly at Aspora, available to join immediately.
 
-Saurabh is a Software Engineer at Aspora (YC W22, previously Vance). His work includes backend services, platform engineering, distributed configuration, server-driven UI, and full-stack products.
+Saurabh was a Software Engineer at Aspora (YC W22, previously Vance) from December 2024 to August 2026. He is seeking backend roles and can join immediately. His work includes backend services, platform engineering, distributed configuration, server-driven UI, and full-stack products.
 
 ## Portfolio
 

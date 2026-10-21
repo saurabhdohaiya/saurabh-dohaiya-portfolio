@@ -27,7 +27,7 @@ export type ProjectEntry = {
 
 export const profile = {
   name: "Saurabh Dohaiya",
-  role: "Software Engineer",
+  role: "Former Software Engineer",
   company: "Aspora",
   intro:
     "I build reliable platforms and product experiences, from infrastructure to customer-facing products.",
@@ -46,7 +46,7 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Software Engineer",
     company: "Aspora",
-    period: "Dec 2024 — Present",
+    period: "Dec 2024 — Aug 2026",
     summary:
       "Expanded from frontend engineering into full-stack platform ownership, delivering backend services, Java SDKs, developer tooling, and customer-facing web experiences.",
     highlights: [

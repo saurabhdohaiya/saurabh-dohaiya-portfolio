@@ -109,7 +109,8 @@ img { display: block; max-width: 100%; }
 .hero { min-height: min(790px, calc(100svh - 5rem)); display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; position: relative; padding-block: 7.5rem 6rem; }
 .hero-copy { z-index: 1; padding-bottom: 1.75rem; }
 .eyebrow { color: var(--muted); font-size: .68rem; font-weight: 600; letter-spacing: .14em; line-height: 1.5; text-transform: uppercase; }
-.hero-kicker { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.5rem; }
+.hero-kicker { display: flex; align-items: center; gap: .65rem; margin: 0 0 .45rem; }
+.hero-availability { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.5rem; color: var(--accent-ink); }
 .status-dot { width: .42rem; height: .42rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px rgba(88,247,7,.7); }
 h1, h2, h3, p { margin-top: 0; }
 .hero h1 { max-width: 740px; margin: 0; font-size: clamp(3.6rem, 7vw, 6.8rem); line-height: .93; letter-spacing: -.065em; font-weight: 500; }
